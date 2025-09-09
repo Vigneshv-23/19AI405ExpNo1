@@ -82,8 +82,13 @@ rooms = [random.uniform(97.0, 102.0) for _ in range(2)]
 print("Initial Patient Temperatures:", [f"{t:.2f}" for t in rooms])
 agent = MedicinePrescribingAgent(rooms)
 agent.run()
+
 ```
+
 ## Output
+
 <img width="1598" height="423" alt="image" src="https://github.com/user-attachments/assets/3881dfb6-9265-4a8b-a04d-cb943678a7d8" />
+
 ## Result
+
 Thus the AI agent is created 
