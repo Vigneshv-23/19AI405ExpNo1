@@ -1,6 +1,6 @@
 <h1>ExpNo 1 :Developing AI Agent with PEAS Description</h1>
-<h3>Name: Saravanan N</h3>
-<h3>Register Number/Staff Id: TSML006</h3>
+<h3>Name: Vignesh V</h3>
+<h3>Register Number: 212223110062</h3>
 
 
 <h3>AIM:</h3>
@@ -40,3 +40,50 @@
 <p>Treat unhealthy patients in each room. And check for the unhealthy patients in random room</p>
 <h3>STEP 5:</h3>
 <p>Measure the performance parameters: For each treatment performance incremented, for each movement performance decremented</p>
+
+<h3>Program</h3>
+```
+import random
+
+class MedicinePrescribingAgent:
+    def __init__(self, rooms):   
+        self.rooms = rooms
+        self.performance = 0
+        self.current_room = 0  
+
+    def sense_temperature(self, room):
+        return self.rooms[room]
+
+    def prescribe_medicine(self, room):
+        if self.rooms[room] > 98.5:
+            print(f"Room {room}: Patient has fever ({self.rooms[room]:.2f}°F). Medicine prescribed ")
+            self.performance += 1
+        else:
+            print(f"Room {room}: Patient is healthy ({self.rooms[room]:.2f}°F). No medicine needed ")
+
+    def move(self, next_room):
+        if self.current_room != next_room:
+            print(f"Moving from Room {self.current_room} → Room {next_room}")
+            self.performance -= 1
+            self.current_room = next_room
+
+    def run(self):
+        for room in range(len(self.rooms)):
+            self.move(room)
+            temp = self.sense_temperature(room)
+            self.prescribe_medicine(room)
+
+        print("\nFinal Score:", self.performance)
+
+
+
+rooms = [random.uniform(97.0, 102.0) for _ in range(2)]
+
+print("Initial Patient Temperatures:", [f"{t:.2f}" for t in rooms])
+agent = MedicinePrescribingAgent(rooms)
+agent.run()
+```
+<h3>Output</h3>
+<img width="1598" height="423" alt="image" src="https://github.com/user-attachments/assets/3881dfb6-9265-4a8b-a04d-cb943678a7d8" />
+<h3>Result</h3>
+Thus the AI agent is created 
