@@ -41,7 +41,7 @@
 <h3>STEP 5:</h3>
 <p>Measure the performance parameters: For each treatment performance incremented, for each movement performance decremented</p>
 
-<h3>Program</h3>
+## Program
 ```
 import random
 
@@ -83,7 +83,7 @@ print("Initial Patient Temperatures:", [f"{t:.2f}" for t in rooms])
 agent = MedicinePrescribingAgent(rooms)
 agent.run()
 ```
-<h3>Output</h3>
+## Output
 <img width="1598" height="423" alt="image" src="https://github.com/user-attachments/assets/3881dfb6-9265-4a8b-a04d-cb943678a7d8" />
-<h3>Result</h3>
+## Result
 Thus the AI agent is created 
